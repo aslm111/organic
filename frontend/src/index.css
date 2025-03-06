@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@theme {
+    --color-darkGreen: #386641;
+    --color-grey: #D9D9D9;
+    --color-brightGreen: #4A9C42;
+    --color-lightGreen: #E8F0E6;
+    --color-washedLightGreen: #E5E3D4;
+    --color-washedGreen: #5F8560;
+}
