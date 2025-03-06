@@ -1,23 +1,21 @@
 import { useState } from "react";
 import { FiSearch, FiShoppingCart } from "react-icons/fi";
+import logo from "../assets/organicfiberlogo.svg";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <nav className="bg-white shadow-sm py-4">
-      <div className="container mx-auto px-4">
+    <nav className="bg-white shadow-sm py-2">
+      <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
             <img
-              src="/leaf-icon.svg"
+              src={logo}
               alt="Organic Fiber"
-              className="h-6 w-6 mr-2"
+              className="h-14 mr-2"
             />
-            <span className="text-green-700 font-semibold text-lg">
-              Organic Fiber
-            </span>
           </div>
 
           {/* Navigation Links */}
@@ -38,7 +36,7 @@ const Navbar = () => {
               href="/sale"
               className="text-gray-700 hover:text-green-600 transition-colors"
             >
-              Sale
+              Sales
             </a>
             <a
               href="/about"
