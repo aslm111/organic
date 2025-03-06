@@ -1,14 +1,19 @@
-import './App.css'
-import Navbar from './components/Navbar'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import MainLayout from "./pages/MainLayout";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
-  
-
   return (
-    <>
-      <Navbar/>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route path="/" element={<LandingPage />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
