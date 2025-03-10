@@ -292,13 +292,14 @@ const LandingPage = () => {
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 md:grid-cols-5">
             <div className="aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden">
               <img
-                src=""
+                src={defaultImage}
+                alt=""
                 className="w-full h-full object-center object-cover hover:opacity-75 transition-opacity"
               />
             </div>
             <div className="aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden">
               <img
-                src=""
+                src={heroImage1}
                 className="w-full h-full object-center object-cover hover:opacity-75 transition-opacity"
               />
             </div>
