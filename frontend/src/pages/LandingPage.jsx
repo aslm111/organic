@@ -8,6 +8,7 @@ import heroImage1 from "../assets/LandingPage/heroImage1.png";
 import { categories, featuredProducts } from "./landingPagedata";
 
 import defaultImage from "../assets/LandingPage/defaultImage.jpg";
+import { useNavigate } from "react-router-dom";
 
 const colorsInHero = [
   "from-green-900 to-green-700",
@@ -39,6 +40,7 @@ const heroSlides = [
 const LandingPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const navigate = useNavigate();
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === heroSlides.length - 1 ? 0 : prev + 1));
@@ -60,6 +62,10 @@ const LandingPage = () => {
       return () => clearTimeout(timer);
     }
   }, [currentSlide, isPaused]);
+
+  const heroButtonHandler = () => {
+    navigate("/products");
+  };
 
   return (
     <div className="w-full">
@@ -89,7 +95,10 @@ const LandingPage = () => {
                 <span className="text-lg md:text-xl text-center">
                   {slide.subtitle}
                 </span>
-                <button className="shadow-xl shadow-gray-600 cursor-pointer p-2 px-5 rounded-full text-darkGreen bg-white transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-2xl z-30 relative">
+                <button
+                  onClick={heroButtonHandler}
+                  className="shadow-xl shadow-gray-600 cursor-pointer p-2 px-5 rounded-full text-darkGreen bg-white transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-2xl z-30 relative"
+                >
                   {slide.button}
                 </button>
               </div>
@@ -170,6 +179,7 @@ const LandingPage = () => {
         <div className="grid md:grid-cols-3 grid-cols-2 lg:grid-cols-6 gap-y-4 lg:mx-12 my-10 place-items-center">
           {categories.map((category, index) => (
             <div
+              onClick={() => category.action(navigate)}
               key={index}
               className="bg-white w-[160px] h-[160px] flex flex-col rounded-xl justify-center gap-1 shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
             >
@@ -187,7 +197,7 @@ const LandingPage = () => {
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-4xl font-bold">Featured Products</h1>
             <a
-              href="#"
+              href="/products"
               className="text-brightGreen hover:text-darkGreen font-medium"
             >
               <div className="flex items-center gap-1 font-semibold">
@@ -197,9 +207,9 @@ const LandingPage = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {featuredProducts.map((product) => (
+            {featuredProducts.map((product, index) => (
               <div
-                key={product.id}
+                key={index}
                 className="bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer hover:-translate-y-1 duration-300 transition-transform"
               >
                 <div className="w-full h-60 bg-gray-white rounded-t-lg overflow-hidden p-4">

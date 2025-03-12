@@ -132,12 +132,12 @@ const ProductPage = () => {
     );
   };
 
+const productClickHandler =()=>{
+  navigate("/productdetail")
+}
+
   return (
     <div className="flex-1 mx-5 mt-5 w-full">
-      <h1 className="text-3xl tracking-wider font-bold mb-6 text-white">
-        All Products {range >= 50 ? `(Price ≤ Rs.${range})` : ""}
-      </h1>
-
       {filteredProducts.length === 0 ? (
         <div className="bg-white p-6 rounded-lg shadow-md text-center">
           <p className="text-lg text-gray-800">
@@ -148,6 +148,7 @@ const ProductPage = () => {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 overflow-y-auto">
           {currentProducts.map((product, index) => (
             <div
+            onClick={productClickHandler}
               key={index}
               className="bg-white rounded-lg shadow-md overflow-hidden"
             >

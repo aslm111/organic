@@ -6,7 +6,7 @@ import RangeContextProvider from "../Context/RangeContext";
 const InnerLayout = () => {
   return (
     <RangeContextProvider>
-      <div className="w-full h-full bg-darkGreen flex">
+      <div className="w-full h-full bg-[#f0f0f0] flex">
         <Sidebar />
         <Outlet />
       </div>

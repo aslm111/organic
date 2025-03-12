@@ -137,7 +137,7 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Mobile toggle button */}
+
       <button
         onClick={toggleSidebar}
         className="fixed top-4 left-4 z-30 bg-lightGreen p-2 rounded-full shadow-md md:hidden"
@@ -145,14 +145,11 @@ const Sidebar = () => {
         <FaBars size={20} className="text-darkGreen" />
       </button>
 
-      {/* Desktop sidebar */}
       <div className="hidden md:block w-64 lg:w-72 flex-shrink-0 p-4 lg:p-6">
         <SidebarContent />
       </div>
-
-      {/* Mobile sidebar overlay */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0  z-40 transition-opacity duration-300 md:hidden ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={toggleSidebar}
