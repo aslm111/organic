@@ -7,6 +7,7 @@ import LandingPage from "./pages/LandingPage";
 import InnerLayout from "./pages/InnerLayout";
 import ProductPage from "./pages/ProductPage";
 import Checkout from "./pages/Checkout";
+import CartPage from './pages/CartPage';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           </Route>
           <Route path="/productdetail" element={<ProductDetail />}></Route>
           <Route path="/checkout" element={<Checkout />}></Route>
+          <Route path="/cart" element={<CartPage />}></Route>
+          <Route path="/productdetail" element={<ProductDetail />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
